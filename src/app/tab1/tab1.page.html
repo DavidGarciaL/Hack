@@ -7,10 +7,18 @@
 </ion-header>
 
 <ion-content>
+  
+    <div class="price-card">
+        <h1>$15,569,449</h1>
+        <h2>Iva a pagar</h2>
+        <h5>*Esta Información es una estimación aproximada basada en los datos de tu facturación</h5>
+    </div>
+
     <ion-card class="welcome-card">
       <ion-card-header>
-        <ion-card-subtitle>Información de IVA Cobrado</ion-card-subtitle>
+        <ion-card-title>Información de IVA Cobrado</ion-card-title>
       </ion-card-header>
+
       <ion-card-content>
           <canvas baseChart
               [data]="doughnutChartData"
@@ -32,7 +40,7 @@
 
     <ion-card class="welcome-card">
       <ion-card-header>
-        <ion-card-subtitle>Información de IVA Pagado</ion-card-subtitle>
+        <ion-card-title>Información de IVA Pagado</ion-card-title>
       </ion-card-header>
       <ion-card-content>
           <canvas baseChart
@@ -52,11 +60,5 @@
       </ion-item>
       </ion-card-content>
     </ion-card>
-
-    <div class="price-card">
-        <h1>$15,569,449</h1>
-        <h2>Iva a pagar</h2>
-        <h5>*Esta Información es una estimación aproximada basada en los datos de tu facturación</h5>
-    </div>
     
 </ion-content>

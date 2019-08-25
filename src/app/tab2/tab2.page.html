@@ -1,9 +1,56 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-title>
-      Tab Two
+      Tu Facturación
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content><br>
+  <ion-label style="margin-left: 15px">Visualizador</ion-label>
+    <ion-select placeholder="Selecciona una opción para ver el contenido" style="margin-right:10px">
+      <ion-select-option value="1">1 Mes</ion-select-option>
+      <ion-select-option value="2">2 Meses</ion-select-option>
+      <ion-select-option value="3">3 Meses</ion-select-option>
+    </ion-select><br>
+
+    <div class="row">
+        <div class="col-md-6">
+          <div style="display: block;">
+            <canvas baseChart width="300" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      
+    <ion-card>
+        <ion-card-content>
+          <ion-list>
+            <ion-list-header>
+                <ion-label>Datos de tu Facturación</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-icon name="trending-up"></ion-icon>
+                <ion-label style="margin-left:10px" color="success">$293,019,991</ion-label>
+                <h4>Ventas</h4>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="trending-down"></ion-icon>
+                <ion-label style="margin-left:10px" color="tertiary">$180,019,991</ion-label>
+                <h4>Gastos</h4>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                <ion-label style="margin-left:10px" color="medium">$112,019,991</ion-label>
+                <h4>Ganancias</h4>
+              </ion-item>
+            </ion-list> 
+        </ion-card-content>
+      </ion-card>
+</ion-content>
