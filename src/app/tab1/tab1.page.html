@@ -7,9 +7,9 @@
 </ion-header>
 
 <ion-content>
-  
+
     <div class="price-card">
-        <h1>$15,569,449</h1>
+        <h1>{{ivaToPaid | currency}}</h1>
         <h2>Iva a pagar</h2>
         <h5>*Esta Información es una estimación aproximada basada en los datos de tu facturación</h5>
     </div>
@@ -21,19 +21,19 @@
 
       <ion-card-content>
           <canvas baseChart
-              [data]="doughnutChartData"
-              [labels]="doughnutChartLabels"
+              [data]="ivaChargedData"
+              [labels]="ivaChargedLabel"
               [chartType]="doughnutChartType"
               (chartHover)="chartHovered($event)"
               (chartClick)="chartClicked($event)">
           </canvas>
           <ion-item>
               <ion-label>IVA Cobrado</ion-label>
-              <ion-badge color="success">$40,416,550</ion-badge>
+              <ion-badge color="success">{{chargedIva | currency}}</ion-badge>
           </ion-item>
           <ion-item>
               <ion-label>Total de ventas</ion-label>
-              <ion-badge color="medium">$293,019,991</ion-badge>
+              <ion-badge color="medium">{{charged | currency}}</ion-badge>
           </ion-item>
       </ion-card-content>
     </ion-card>
@@ -44,19 +44,19 @@
       </ion-card-header>
       <ion-card-content>
           <canvas baseChart
-          [data]="doughnutChartData"
-          [labels]="doughnutChartLabels"
+          [data]="ivaPaidData"
+          [labels]="ivaPaidLabels"
           [chartType]="doughnutChartType"
           (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)">
       </canvas>
       <ion-item>
           <ion-label>IVA Cobrado</ion-label>
-          <ion-badge color="tertiary">$40,416,550</ion-badge>
+          <ion-badge color="tertiary">{{paidIva | currency}}</ion-badge>
       </ion-item>
       <ion-item>
           <ion-label>Total de ventas</ion-label>
-          <ion-badge color="medium">$293,019,991</ion-badge>
+          <ion-badge color="medium">{{paid | currency}}</ion-badge>
       </ion-item>
       </ion-card-content>
     </ion-card>

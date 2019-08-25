@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './login.page';
 
 import { TabsPage } from '../tabs/tabs.page';
+import { Tab2Resolver } from '../tab2/tab2.resolver'
 
 const routes: Routes = [
   {
