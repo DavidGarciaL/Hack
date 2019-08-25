@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router"
+import {Router} from "@angular/router";
+import { HackSerivce } from '../services/hack.service'
+
 
 @Component({
   selector: 'app-login',
@@ -7,15 +9,21 @@ import {Router} from "@angular/router"
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  rfc:string = '';
+  pass:string = '';
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
+  constructor(private router: Router, private service: HackSerivce) { 
   }
 
-  login(){
-    console.log('login');
-    this.router.navigate(['/tabs/tab1']);
+  async ngOnInit() {
+  }
+
+  async login(){
+    let access_token = (await this.service.login(this.rfc,this.pass)).access_token;
+    if(access_token){
+      localStorage.setItem('token', access_token);
+      this.router.navigate(['/tabs/tab1']);
+    }
   }
 
 }
