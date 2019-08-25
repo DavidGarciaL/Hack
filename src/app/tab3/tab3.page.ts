@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HackSerivce } from '../services/hack.service';
-import { ModalFacturasPage } from '../modal-facturas/modal-facturas.page';
+import { ModalClientesPage } from '../modal-clientes/modal-clientes.page';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -20,10 +20,10 @@ export class Tab3Page {
   }
 
   async openModalFact(rfc: string) {
-    console.log(rfc);
+    localStorage.setItem('rfc', rfc);
     const myModal = await this.modal.create(
      {
-      component: ModalFacturasPage,
+      component: ModalClientesPage,
       componentProps: this.modal
      }
     );

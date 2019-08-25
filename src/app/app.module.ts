@@ -13,10 +13,11 @@ import { ChartsModule } from 'ng2-charts';
 import {HttpClientModule} from '@angular/common/http';
 import { ModalFacturasPage } from '../app/modal-facturas/modal-facturas.page';
 import { ModalVentasPage } from '../app/modal-ventas/modal-ventas.page';
+import { ModalClientesPage } from '../app/modal-clientes/modal-clientes.page';
 
 @NgModule({
-  declarations: [AppComponent, ModalFacturasPage, ModalVentasPage],
-  entryComponents: [ModalFacturasPage, ModalVentasPage],
+  declarations: [AppComponent, ModalFacturasPage, ModalVentasPage, ModalClientesPage],
+  entryComponents: [ModalFacturasPage, ModalVentasPage,ModalClientesPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ChartsModule, HttpClientModule],
   providers: [
     StatusBar,

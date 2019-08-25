@@ -10,7 +10,7 @@ export class ModalVentasPage {
   ventas:any = [];
 
   constructor(private  modalCt: ModalController) {
-    this.ventas =   JSON.parse(localStorage.getItem('expenses'));
+    this.ventas =   JSON.parse(localStorage.getItem('invoices'));
    }
 
   closeModal() {

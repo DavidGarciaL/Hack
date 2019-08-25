@@ -78,4 +78,14 @@ export class HackSerivce {
       this.httpOptions
     ).toPromise();
   }
+
+  async getClients(rfc): Promise<any> {
+    return this.http.post(
+      this.url + 'Transactions/GetClientDEtail', 
+      {
+          emisorRFC: rfc
+      }, 
+      this.httpOptions
+    ).toPromise();
+  }
 }
