@@ -6,7 +6,9 @@ const routes: Routes = [
     path: '',
     //loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
-  },
+  },  { path: 'modal-facturas', loadChildren: './modal-facturas/modal-facturas.module#ModalFacturasPageModule' },
+  { path: 'modal-ventas', loadChildren: './modal-ventas/modal-ventas.module#ModalVentasPageModule' },
+
 ];
 @NgModule({
   imports: [

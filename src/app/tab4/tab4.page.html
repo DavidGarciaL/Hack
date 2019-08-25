@@ -1,9 +1,75 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tab4</ion-title>
+    <ion-title>Historial de tus cuentas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
+    <ion-item color="success">
+      <ion-label>Clientes en Periodo</ion-label>
+      <h3>2134</h3>
+      <ion-icon name="contacts" slot="end" size="large"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label text-wrap>
+        <ion-text color="primary">
+          <h1 style="color: green">$3,546,789</h1>
+        </ion-text>
+        <p>Tu venta mas grande por factura</p>
+        <ion-text color="secondary">
+          <p>Banorte</p>
+        </ion-text>
+      </ion-label>
+      <ion-icon name="medal" slot="end" size="large"></ion-icon>
+    </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary">
+            <h1 style="color: green">$9,345,123</h1>
+          </ion-text>
+          <p>Tu cliente mas grande por factura</p>
+          <ion-text color="secondary">
+            <p>scotiabank inverlant</p>
+          </ion-text>
+        </ion-label>
+        <ion-icon name="contact" slot="end" size="large"></ion-icon>
+      </ion-item><br><br>
+
+      <ion-item color="primary">
+          <ion-label>Proveedores en Periodo</ion-label>
+          <h3>2134</h3>
+          <ion-icon name="contacts" slot="end" size="large"></ion-icon>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label text-wrap>
+            <ion-text color="primary">
+              <h1>$3,546,789</h1>
+            </ion-text>
+            <p>Tu gasto mas grande en el periodo</p>
+            <ion-text color="secondary">
+              <p>Google operaciones de México</p>
+            </ion-text>
+          </ion-label>
+          <ion-icon name="return-right" slot="end" size="large"></ion-icon>
+        </ion-item>
+    
+          <ion-item>
+            <ion-label text-wrap>
+              <ion-text color="primary">
+                <h1>$9,345,123</h1>
+              </ion-text>
+              <p>Tu proveedor mas grande en el periodo</p>
+              <ion-text color="secondary">
+                <p>scotiabank inverlant</p>
+              </ion-text>
+            </ion-label>
+            <ion-icon name="filing" slot="end" size="large"></ion-icon>
+          </ion-item><br>
+
+    <ion-button color="primary" expand="block" (click)="openModalFact();" shape="round">Ver resumen de facturas</ion-button>
+    <ion-button color="success" expand="block" (click)="openModalVenta();" shape="round" style="margin-top:15px">Ver resumen de ventas</ion-button>
 </ion-content>
