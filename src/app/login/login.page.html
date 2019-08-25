@@ -1,13 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title text-center>Safe Wallet</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-label color="primary">RFC</ion-label>
-  <ion-input placeholder="RFC" [(ngModel)]="rfc"></ion-input>
-  <ion-label color="primary">Password</ion-label>
-  <ion-input placeholder="Password" [(ngModel)]="pass"></ion-input>
-  <ion-button (click)="login()" expand="block">Login</ion-button>
+<ion-content >
+  <div class="b">
+    <div>
+      <img src="../../assets/icon/wallet.png" style="margin-left:100px"><br><br><br><br>
+
+      <ion-item style="border-radius:25px">
+        <ion-label>RFC</ion-label>
+        <ion-input [(ngModel)]="rfc" clearInput value="clear me" style="border-radius:25px"></ion-input>
+      </ion-item><br>
+
+      <ion-item style="border-radius:25px">
+        <ion-label>Password</ion-label>
+        <ion-input [(ngModel)]="pass" clearInput value="clear me"></ion-input>
+      </ion-item><br><br>
+
+        <ion-button (click)="login()" color="tertiary" expand="block" shape="round">Login</ion-button>
+    </div>
+  </div>
 </ion-content>
