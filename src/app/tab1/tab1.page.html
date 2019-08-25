@@ -1,38 +1,62 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar color="tertiary">
     <ion-title>
-      Tu IVA
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content><br>
+<ion-content>
     <ion-card class="welcome-card">
       <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
+        <ion-card-subtitle>Información de IVA Cobrado</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-          <div style="display: block">
-              <canvas baseChart
-                          [data]="doughnutChartData"
-                          [labels]="doughnutChartLabels"
-                          [chartType]="doughnutChartType"
-                          (chartHover)="chartHovered($event)"
-                          (chartClick)="chartClicked($event)"></canvas>
-            </div>
-      </ion-card-content>
-    </ion-card><br>
-
-    <ion-card class="welcome-card">
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+          <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)">
+          </canvas>
+          <ion-item>
+              <ion-label>IVA Cobrado</ion-label>
+              <ion-badge color="success">$40,416,550</ion-badge>
+          </ion-item>
+          <ion-item>
+              <ion-label>Total de ventas</ion-label>
+              <ion-badge color="medium">$293,019,991</ion-badge>
+          </ion-item>
       </ion-card-content>
     </ion-card>
 
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle>Información de IVA Pagado</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+          <canvas baseChart
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+      </canvas>
+      <ion-item>
+          <ion-label>IVA Cobrado</ion-label>
+          <ion-badge color="tertiary">$40,416,550</ion-badge>
+      </ion-item>
+      <ion-item>
+          <ion-label>Total de ventas</ion-label>
+          <ion-badge color="medium">$293,019,991</ion-badge>
+      </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="price-card">
+        <h1>$15,569,449</h1>
+        <h2>Iva a pagar</h2>
+        <h5>*Esta Información es una estimación aproximada basada en los datos de tu facturación</h5>
+    </div>
     
 </ion-content>
