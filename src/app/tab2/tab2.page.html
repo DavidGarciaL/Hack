@@ -8,10 +8,11 @@
 
 <ion-content><br>
   <ion-label style="margin-left: 15px">Visualizador</ion-label>
-    <ion-select placeholder="Selecciona una opción para ver el contenido" style="margin-right:10px">
-      <ion-select-option value="1">1 Mes</ion-select-option>
-      <ion-select-option value="2">2 Meses</ion-select-option>
-      <ion-select-option value="3">3 Meses</ion-select-option>
+    <ion-select value="3" placeholder="Selecciona una opción para ver el contenido" style="margin-right:10px" (ionChange)="change($event)">
+      <ion-select-option value="3">3 Mes</ion-select-option>
+      <ion-select-option value="6">6 Meses</ion-select-option>
+      <ion-select-option value="12">12 Meses</ion-select-option>
+      <ion-select-option value="24">24 Meses</ion-select-option>
     </ion-select><br>
 
     <div class="row">

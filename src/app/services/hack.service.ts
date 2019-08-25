@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import * as _ from 'lodash';
+import {formatDate} from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -28,23 +29,33 @@ export class HackSerivce {
     return this.http.get(this.url + 'Users', this.httpOptions).toPromise();
   }
 
-  async getLimitedCharts(): Promise<any> {
+  async getLimitedCharts(date): Promise<any> {
     return this.http.post(
-        this.url + 'Transactions/GetVisualization', 
+      this.url + 'Transactions/GetVisualization', 
+      {
+          Limit: date
+      }, 
+      this.httpOptions
+    ).toPromise();
+  }
+
+  async getIVA(date): Promise<any> {
+    return this.http.post(
+        this.url + 'Transactions/GetIva', 
         {
-            Limit: "2019-01-01"
+            Limit: date
         }, 
         this.httpOptions
     ).toPromise();
   }
 
-  async getIVA(): Promise<any> {
+  async getBestCLients(): Promise<any> {
     return this.http.post(
-        this.url + 'Transactions/GetIva', 
-        {
-            Limit: "2019-01-01"
-        }, 
-        this.httpOptions
+      this.url + 'Transactions/GetBestClients', 
+      {
+          Top: 5
+      }, 
+      this.httpOptions
     ).toPromise();
   }
 

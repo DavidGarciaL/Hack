@@ -7,7 +7,12 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-select value="3" placeholder="Selecciona una opción para ver el contenido" style="margin-right:10px" (ionChange)="change($event)">
+        <ion-select-option value="3">3 Mes</ion-select-option>
+        <ion-select-option value="6">6 Meses</ion-select-option>
+        <ion-select-option value="12">12 Meses</ion-select-option>
+        <ion-select-option value="24">24 Meses</ion-select-option>
+      </ion-select><br>
     <div class="price-card">
         <h1>{{ivaToPaid | currency}}</h1>
         <h2>Iva a pagar</h2>

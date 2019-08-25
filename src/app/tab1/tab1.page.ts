@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HackSerivce } from '../services/hack.service'
+import { HackSerivce } from '../services/hack.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-tab1',
@@ -24,12 +25,13 @@ export class Tab1Page {
     { borderColor: ["#AEEBF2", "#FEFFC9"] }];
 
   constructor(private service: HackSerivce) {
-    this.launchTab();
+    let date = moment().subtract(3, 'months').calendar();
+    this.launchTab(date); 
   }
 
-  async launchTab(){
+  async launchTab(date){
     if(localStorage.getItem('token')){
-      let res = await this.service.getIVA();
+      let res = await this.service.getIVA(date);
       this.chargedIva = res.chargedIva;
       this.charged = res.charged;
       this.paidIva = res.paidIva;
@@ -45,5 +47,10 @@ export class Tab1Page {
   }
 
   public chartHovered(e:any):void {
+  }
+
+  change(event){
+    let date = moment().subtract(event.detail.value, 'months').calendar();
+    this.launchTab(date);
   }
 }
