@@ -59,4 +59,23 @@ export class HackSerivce {
     ).toPromise();
   }
 
+  async getPeriodSales(date): Promise<any> {
+    return this.http.post(
+      this.url + 'Transactions/GetPeriodSales', 
+      {
+          Limit: date
+      }, 
+      this.httpOptions
+    ).toPromise();
+  }
+  
+  async getExpenses(date): Promise<any> {
+    return this.http.post(
+      this.url + 'Transactions/GetExpenses', 
+      {
+          Limit: date
+      }, 
+      this.httpOptions
+    ).toPromise();
+  }
 }
