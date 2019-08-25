@@ -22,6 +22,8 @@ export class Tab4Page {
   async loadData() {
     this.period = await this.service.getPeriodSales("2019-01-01");
     this.expenses = await this.service.getExpenses("2019-01-01");
+    localStorage.setItem('invoices', JSON.stringify(this.period.biggestInvoices));
+    localStorage.setItem('expenses', JSON.stringify(this.expenses.biggestInvoices));
   }
 
   async openModalFact() {
@@ -57,8 +59,9 @@ export class Tab4Page {
         date = "2017-01-01";
         break;
     }
-    console.log(date);
     this.period = await this.service.getPeriodSales(date);
     this.expenses = await this.service.getExpenses(date);
+    localStorage.setItem('invoices', JSON.stringify(this.period.biggestInvoices));
+    localStorage.setItem('expenses', JSON.stringify(this.expenses.biggestInvoices));
   }
 }
