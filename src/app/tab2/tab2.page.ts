@@ -9,6 +9,7 @@ import * as moment from 'moment';
 })
 export class Tab2Page {
   sales = 0;
+  hidden: boolean;
   expenses = 0;
   earnings = 0;
   lineChartLegend = true;
@@ -45,6 +46,7 @@ export class Tab2Page {
   }
 
   async launch(date) {
+    this.hidden = false;
     if(localStorage.getItem('token')){
       let res = await this.service.getLimitedCharts(date);
       this.expenses = res.expenses;
@@ -59,6 +61,7 @@ export class Tab2Page {
         return x.total;
       });
     }
+    this.hidden = true;
   }
 
   randomize():void {

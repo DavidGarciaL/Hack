@@ -30,6 +30,7 @@ export class Tab1Page {
   paidIva = 0;
   paid = 0;
   ivaToPaid = 0;
+  hidden:boolean;
   public doughnutColors:any[] = [
     { backgroundColor: ["#86c7f3", "#ffe199"] },
     { borderColor: ["#AEEBF2", "#FEFFC9"] }];
@@ -39,6 +40,7 @@ export class Tab1Page {
   }
 
   async launchTab(date){
+    this.hidden = false;
     if(localStorage.getItem('token')){
       let res = await this.service.getIVA(date);
       this.chargedIva = res.chargedIva;
@@ -49,6 +51,7 @@ export class Tab1Page {
       this.ivaChargedData = [res.chargedIva, res.charged];
       this.ivaPaidData = [res.paidIva, res.paid];
     }
+    this.hidden = true;
   }
 
   // events

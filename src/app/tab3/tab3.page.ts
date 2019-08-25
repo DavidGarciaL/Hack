@@ -10,13 +10,16 @@ import { ModalController } from '@ionic/angular';
 })
 export class Tab3Page {
   clients = [];
+  hidden:boolean;
 
   constructor(private service: HackSerivce, private modal: ModalController) {
     this.getBestClients();
   }
 
-  async getBestClients(){
+  async getBestClients() {
+    this.hidden = false;
     this.clients = await this.service.getBestCLients();
+    this.hidden = true;
   }
 
   async openModalFact(rfc: string) {

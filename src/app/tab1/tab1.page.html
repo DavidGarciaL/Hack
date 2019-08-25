@@ -13,6 +13,7 @@
 </ion-header>
 
 <ion-content>
+<div *ngIf="hidden; else ShowLoading">
 
     <div class="price-card">
         <h1 style="color:#7264C9">{{ivaToPaid | currency}}</h1>
@@ -68,5 +69,14 @@
       </ion-item>
       </ion-card-content>
     </ion-card>
+</div>
+
+<ng-template #ShowLoading>
+    <div>
+        <div id='loading'>
+            <div></div>
+        </div>
+      </div>
+  </ng-template>
     
 </ion-content>
