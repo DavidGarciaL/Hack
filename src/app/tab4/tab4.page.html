@@ -1,25 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title style="color: #7264C9">Historial de tus cuentas</ion-title>
+  <ion-toolbar style="color: #7264C9"><br>
+    <ion-title>Historial de tus cuentas</ion-title>
+    <ion-select value="0" placeholder="Selecciona una opción para ver el contenido" style="margin-right:10px" (ionChange)="change($event)">
+        <ion-select-option value="0">2019</ion-select-option>
+        <ion-select-option value="1">2018</ion-select-option>
+        <ion-select-option value="2">2017</ion-select-option>
+      </ion-select>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding *ngIf="expenses && period">
 
-    <ion-item color="success">
-      <ion-label>Clientes en Periodo</ion-label>
-      <h3>2134</h3>
+    <ion-item color="clear">
+      <h2 style="color:#04B49A">Clientes en Periodo</h2>
+      <h3 style="color:#00DCB8">&nbsp;&nbsp;&nbsp;{{period.numCustomers}}</h3>
       <ion-icon name="contacts" slot="end" size="large"></ion-icon>
     </ion-item>
 
     <ion-item>
       <ion-label text-wrap>
-        <ion-text>
-          <h1 style="color: #00DCB8">$3,546,789</h1>
+        <ion-text color="primary">
+          <h1 style="color: green">{{period.biggestSale}}</h1>
         </ion-text>
         <p>Tu venta mas grande por factura</p>
         <ion-text color="secondary">
-          <p>Banorte</p>
+          <p>{{period.biggestSaleName}}</p>
         </ion-text>
       </ion-label>
       <ion-icon name="medal" slot="end" size="large"></ion-icon>
@@ -27,12 +32,12 @@
 
       <ion-item>
         <ion-label text-wrap>
-          <ion-text>
-            <h1 style="color: #00DCB8">$9,345,123</h1>
+          <ion-text color="primary">
+            <h1 style="color: green">{{period.biggestCustomer}}</h1>
           </ion-text>
           <p>Tu cliente mas grande por factura</p>
           <ion-text color="secondary">
-            <p>scotiabank inverlant</p>
+            <p>{{period.biggestCustomerName}}</p>
           </ion-text>
         </ion-label>
         <ion-icon name="contact" slot="end" size="large"></ion-icon>
@@ -40,18 +45,18 @@
 
       <ion-item color="primary">
           <ion-label>Proveedores en Periodo</ion-label>
-          <h3>2134</h3>
+          <h3>{{expenses.numCustomers}}</h3>
           <ion-icon name="contacts" slot="end" size="large"></ion-icon>
         </ion-item>
     
         <ion-item>
           <ion-label text-wrap>
             <ion-text color="primary">
-              <h1>$3,546,789</h1>
+              <h1>{{expenses.biggestSale}}</h1>
             </ion-text>
             <p>Tu gasto mas grande en el periodo</p>
             <ion-text color="secondary">
-              <p>Google operaciones de México</p>
+              <p>{{expenses.biggestSaleName}}</p>
             </ion-text>
           </ion-label>
           <ion-icon name="return-right" slot="end" size="large"></ion-icon>
@@ -60,11 +65,11 @@
           <ion-item>
             <ion-label text-wrap>
               <ion-text color="primary">
-                <h1>$9,345,123</h1>
+                <h1>{{expenses.biggestCustomer}}</h1>
               </ion-text>
               <p>Tu proveedor mas grande en el periodo</p>
               <ion-text color="secondary">
-                <p>scotiabank inverlant</p>
+                <p>{{expenses.biggestCustomerName}}</p>
               </ion-text>
             </ion-label>
             <ion-icon name="filing" slot="end" size="large"></ion-icon>
@@ -75,8 +80,9 @@
               <ion-button color="primary" expand="block" (click)="openModalFact();" shape="round" size="small">facturas</ion-button>
           </ion-col>
           <ion-col size="4">
-              <ion-button style="color:#00DCB8" expand="block" (click)="openModalVenta();" shape="round" size="small">Ventas</ion-button>
+              <ion-button color ="success" expand="block" (click)="openModalVenta();" shape="round" size="small">Ventas</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
 </ion-content>
+

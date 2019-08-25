@@ -35,8 +35,7 @@ export class Tab1Page {
     { borderColor: ["#AEEBF2", "#FEFFC9"] }];
 
   constructor(private service: HackSerivce) {
-    let date = moment().subtract(3, 'months').calendar();
-    this.launchTab(date); 
+    this.launchTab("2019-01-01"); 
   }
 
   async launchTab(date){

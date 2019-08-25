@@ -6,8 +6,11 @@ import { NavParams, ModalController } from '@ionic/angular';
   styleUrls: ['./modal-facturas.page.scss'],
 })
 export class ModalFacturasPage {
+  facturas:any = [];
 
-  constructor(private navParams: NavParams, public modalCt: ModalController) { }
+  constructor(private navParams: NavParams, public modalCt: ModalController) { 
+    this.facturas =   JSON.parse(localStorage.getItem('expenses'));
+  }
 
   closeModal() {
     this.modalCt.dismiss();

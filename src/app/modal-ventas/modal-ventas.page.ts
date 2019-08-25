@@ -7,8 +7,11 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./modal-ventas.page.scss'],
 })
 export class ModalVentasPage {
+  ventas:any = [];
 
-  constructor(private  modalCt: ModalController) { }
+  constructor(private  modalCt: ModalController) {
+    this.ventas =   JSON.parse(localStorage.getItem('expenses'));
+   }
 
   closeModal() {
     this.modalCt.dismiss();
