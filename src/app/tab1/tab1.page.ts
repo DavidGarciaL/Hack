@@ -10,6 +10,16 @@ import * as moment from 'moment';
 export class Tab1Page {
 
   // Doughnut
+  lineChartColorsPurple = [
+    {
+      backgroundColor: ['#B8AAE9' , '#7264C9']
+    }
+  ];
+  lineChartColorsGreen = [
+    {
+      backgroundColor: ['#00DCB8' , '#00C2A2']
+    }
+  ];
   ivaChargedLabel:any[] = ['Iva Cobrado', 'Total de Ventas'];
   ivaChargedData:any[] = [];
   ivaPaidLabels:any[] = ['Iva Pagado', 'Total de Ventas'];
@@ -53,4 +63,6 @@ export class Tab1Page {
     let date = moment().subtract(event.detail.value, 'months').calendar();
     this.launchTab(date);
   }
+
+  
 }

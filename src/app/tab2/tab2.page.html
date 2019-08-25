@@ -1,20 +1,19 @@
-<ion-header>
-  <ion-toolbar color="success">
+<ion-header><br>
+  <ion-toolbar style="color: #7264C9">
     <ion-title>
       Tu Facturación
     </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content><br>
-  <ion-label style="margin-left: 15px">Visualizador</ion-label>
     <ion-select value="3" placeholder="Selecciona una opción para ver el contenido" style="margin-right:10px" (ionChange)="change($event)">
       <ion-select-option value="3">3 Mes</ion-select-option>
       <ion-select-option value="6">6 Meses</ion-select-option>
       <ion-select-option value="12">12 Meses</ion-select-option>
       <ion-select-option value="24">24 Meses</ion-select-option>
-    </ion-select><br>
+    </ion-select>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content>
+<br>
     <div class="row">
         <div class="col-md-6">
           <div style="display: block;">
@@ -34,21 +33,21 @@
         <ion-card-content>
           <ion-list>
             <ion-list-header>
-                <ion-label>Datos de tu Facturación</ion-label>
+                <h3>Datos de Facturación</h3>
               </ion-list-header>
               <ion-item>
                 <ion-icon name="trending-up"></ion-icon>
-                <ion-label style="margin-left:10px" color="success">$293,019,991</ion-label>
+                <ion-label style="margin-left:10px" style="color:#00DCB8">&nbsp;$293,019,991</ion-label>
                 <h4>Ventas</h4>
               </ion-item>
               <ion-item>
                 <ion-icon name="trending-down"></ion-icon>
-                <ion-label style="margin-left:10px" color="tertiary">$180,019,991</ion-label>
+                <ion-label style="margin-left:10px" style="color:#8073E6">&nbsp;$180,019,991</ion-label>
                 <h4>Gastos</h4>
               </ion-item>
               <ion-item>
                 <ion-icon name="checkmark-circle-outline"></ion-icon>
-                <ion-label style="margin-left:10px" color="medium">$112,019,991</ion-label>
+                <ion-label style="margin-left:10px" style="color:#526474">&nbsp;$112,019,991</ion-label>
                 <h4>Ganancias</h4>
               </ion-item>
             </ion-list> 

@@ -16,24 +16,23 @@ export class Tab2Page {
   lineChartLabels = [];
   lineChartOptions = { responsive: true };
   lineChartData = [
-    {data: [], label: 'Income'},
-    {data: [], label: 'Outcome'}
+    {data: [], label: 'Ingresos'},
+    {data: [], label: 'Egresos'}
   ];
-
   lineChartColors = [
     {
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
+      backgroundColor: 'rgba(0, 220, 184, 0.2)',
+      borderColor: '#00C2A2',
+      pointBackgroundColor: '#04B49A',
+      pointBorderColor: '#04B49A',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
     {
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
+      backgroundColor: 'rgba(128, 115, 230, 0.2)',
+      borderColor: '#574BA8',
+      pointBackgroundColor: '#5C5A92',
+      pointBorderColor: '#5C5A92',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
     }
@@ -52,11 +51,11 @@ export class Tab2Page {
       this.sales = res.sales;
       this.earnings =- this.earnings;
       this.lineChartLabels = res.incomeList.map(x => x.date);
-      this.lineChartData.find(x => x.label === "Income").data = res.incomeList.map(x => {
+      this.lineChartData.find(x => x.label === "Ingresos").data = res.incomeList.map(x => {
         return x.total;
       });
 
-      this.lineChartData.find(x => x.label === "Outcome").data = res.outcomeList.map(x => {
+      this.lineChartData.find(x => x.label === "Egresos").data = res.outcomeList.map(x => {
         return x.total;
       });
     }
